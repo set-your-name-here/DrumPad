@@ -11,6 +11,7 @@ import io.reactivex.subjects.BehaviorSubject
 class DrumViewModel : ViewModel(){
 
     val drumBehaviorSubject: BehaviorSubject<DrumButtonClass> = BehaviorSubject.create()
+    lateinit var drumSoundPool : DrumSound
 
     fun getDrums(): Observable<List<DrumButton>> = drumBehaviorSubject
             .subscribeOn(Schedulers.io())

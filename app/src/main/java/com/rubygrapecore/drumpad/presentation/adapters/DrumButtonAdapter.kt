@@ -7,10 +7,11 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import com.rubygrapecore.drumpad.R
 import com.rubygrapecore.drumpad.entities.DrumButton
-import kotlinx.android.synthetic.main.fragment_drum.view.*
+import com.rubygrapecore.drumpad.presentation.listeners.OnDrumClickListener
 import kotlinx.android.synthetic.main.fragment_drum_button.view.*
 
-class DrumButtonAdapter : RecyclerView.Adapter<DrumButtonAdapter.DrumButtonView>() {
+class DrumButtonAdapter(private var clickListener: OnDrumClickListener) :
+    RecyclerView.Adapter<DrumButtonAdapter.DrumButtonView>() {
 
     var buttons: ArrayList<DrumButton> = ArrayList()
 
@@ -37,7 +38,9 @@ class DrumButtonAdapter : RecyclerView.Adapter<DrumButtonAdapter.DrumButtonView>
 
         init {
             view.setOnClickListener {
-
+                clickListener.onDrumClick(
+                    buttons[adapterPosition].id
+                )
             }
         }
     }
