@@ -27,7 +27,6 @@ class DrumFragment : Fragment(R.layout.fragment_drum), OnDrumClickListener, View
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         drumViewModel = ViewModelProvider(this)[DrumViewModel::class.java]
-
         drumViewModel.drumSoundPool = DrumSound(requireContext())
     }
 

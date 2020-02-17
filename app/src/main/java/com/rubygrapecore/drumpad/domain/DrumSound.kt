@@ -15,10 +15,12 @@ class DrumSound(private var context: Context) {
         context.getSystemService(Context.AUDIO_SERVICE) as AudioManager
 
     private fun buildSoundPool() {
+        audioManager.mode = AudioManager.MODE_NORMAL
+
         soundPool?.release()
         val audioAttributes = AudioAttributes.Builder()
             .setUsage(AudioAttributes.USAGE_GAME)
-            .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+            .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
             .setFlags(AudioAttributes.FLAG_AUDIBILITY_ENFORCED)
             .build()
 
@@ -27,8 +29,8 @@ class DrumSound(private var context: Context) {
             .setAudioAttributes(audioAttributes)
             .build()
 
-        soundPool?.autoPause()
         soundPool?.autoResume()
+        soundPool?.autoPause()
     }
 
     fun playSound(keyId: Int) {
@@ -36,7 +38,6 @@ class DrumSound(private var context: Context) {
 
         soundPool?.let { pool ->
             val sound = soundPoolMap.get(keyId)
-            pool.stop(sound)
             pool.play(
                 sound,
                 streamVolume,
@@ -63,9 +64,9 @@ class DrumSound(private var context: Context) {
 
     companion object {
         private const val DRUM_SOUND_TAG = "DrumSoundPool"
-        private const val SOUND_POOL_STREAMS_COUNT = 100
+        private const val SOUND_POOL_STREAMS_COUNT = 8
         private const val SOUND_POOL_PRIORITY = 1
         private const val SOUND_POOL_LOOP = 0
-        private const val SOUND_POOL_RATE = 1f
+        private const val SOUND_POOL_RATE = 2f
     }
 }
