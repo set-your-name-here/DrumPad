@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
     app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.rubygrapecore.drumpad.presentation.fragments.SplashFragment"
-        android:label="SplashFragment" />
+        android:name="com.rubygrapecore.drumpad.presentation.fragments.SplashFragment">
+        <action
+            android:id="@+id/action_splashFragment_to_drumFragment"
+            app:destination="@id/drumFragment"
+            app:popUpTo="@id/drumFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"/>
+    </fragment>
     <fragment
         android:id="@+id/drumFragment"
-        android:name="com.rubygrapecore.drumpad.presentation.fragments.DrumFragment"
-        android:label="DrumFragment" />
+        android:name="com.rubygrapecore.drumpad.presentation.fragments.DrumFragment" />
 </navigation>

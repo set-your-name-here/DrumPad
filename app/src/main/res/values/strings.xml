@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">DrumPad</string>
     <string name="app_title">Drum Pad</string>
+    <string name="drum_type_acoustic">Acoustic drums</string>
+    <string name="drum_type_electronic">Electronic Drums</string>
+    <string name="drum_type_soundscape">Soundscape</string>
 </resources>
