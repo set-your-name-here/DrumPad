@@ -63,7 +63,6 @@ class DrumSound(private var context: Context) {
     }
 
     companion object {
-        private const val DRUM_SOUND_TAG = "DrumSoundPool"
         private const val SOUND_POOL_STREAMS_COUNT = 8
         private const val SOUND_POOL_PRIORITY = 1
         private const val SOUND_POOL_LOOP = 0
