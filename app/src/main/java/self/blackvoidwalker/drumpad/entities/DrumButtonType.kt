@@ -1,4 +1,4 @@
-package com.rubygrapecore.drumpad.entities
+package self.blackvoidwalker.drumpad.entities
 
 enum class DrumButtonType(val value: String) {
     OPEN_HI_HAT("Open Hi-Hat"),

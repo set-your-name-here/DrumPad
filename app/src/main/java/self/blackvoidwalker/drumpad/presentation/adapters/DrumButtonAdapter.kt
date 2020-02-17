@@ -1,13 +1,13 @@
-package com.rubygrapecore.drumpad.presentation.adapters
+package self.blackvoidwalker.drumpad.presentation.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
-import com.rubygrapecore.drumpad.R
-import com.rubygrapecore.drumpad.entities.DrumButton
-import com.rubygrapecore.drumpad.presentation.listeners.OnDrumClickListener
+import self.blackvoidwalker.drumpad.R
+import self.blackvoidwalker.drumpad.entities.DrumButton
+import self.blackvoidwalker.drumpad.presentation.listeners.OnDrumClickListener
 import kotlinx.android.synthetic.main.fragment_drum_button.view.*
 
 class DrumButtonAdapter(private var clickListener: OnDrumClickListener) :

@@ -1,8 +1,8 @@
-package com.rubygrapecore.drumpad.presentation
+package self.blackvoidwalker.drumpad.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.rubygrapecore.drumpad.R
+import self.blackvoidwalker.drumpad.R
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 

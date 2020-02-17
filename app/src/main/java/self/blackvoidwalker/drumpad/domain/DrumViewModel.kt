@@ -1,8 +1,8 @@
-package com.rubygrapecore.drumpad.domain
+package self.blackvoidwalker.drumpad.domain
 
 import androidx.lifecycle.ViewModel
-import com.rubygrapecore.drumpad.entities.DrumButton
-import com.rubygrapecore.drumpad.entities.DrumButtonClass
+import self.blackvoidwalker.drumpad.entities.DrumButton
+import self.blackvoidwalker.drumpad.entities.DrumButtonClass
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers

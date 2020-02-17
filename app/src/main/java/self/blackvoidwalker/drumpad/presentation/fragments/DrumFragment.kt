@@ -1,33 +1,38 @@
-package com.rubygrapecore.drumpad.presentation.fragments
+package self.blackvoidwalker.drumpad.presentation.fragments
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import com.rubygrapecore.drumpad.R
-import com.rubygrapecore.drumpad.domain.DrumSound
-import com.rubygrapecore.drumpad.domain.DrumViewModel
-import com.rubygrapecore.drumpad.entities.DrumButton
-import com.rubygrapecore.drumpad.entities.DrumButtonClass
-import com.rubygrapecore.drumpad.presentation.adapters.DrumButtonAdapter
-import com.rubygrapecore.drumpad.presentation.listeners.OnDrumClickListener
+import self.blackvoidwalker.drumpad.R
+import self.blackvoidwalker.drumpad.domain.DrumSound
+import self.blackvoidwalker.drumpad.domain.DrumViewModel
+import self.blackvoidwalker.drumpad.entities.DrumButton
+import self.blackvoidwalker.drumpad.entities.DrumButtonClass
+import self.blackvoidwalker.drumpad.presentation.adapters.DrumButtonAdapter
+import self.blackvoidwalker.drumpad.presentation.listeners.OnDrumClickListener
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.fragment_drum.*
 
-class DrumFragment : Fragment(R.layout.fragment_drum), OnDrumClickListener, View.OnClickListener {
+class DrumFragment : Fragment(R.layout.fragment_drum),
+    OnDrumClickListener, View.OnClickListener {
 
     private lateinit var drumViewModel: DrumViewModel
 
     private val drumCompositeDisposable = CompositeDisposable()
-    private val drumButtonAdapter = DrumButtonAdapter(clickListener = this)
+    private val drumButtonAdapter =
+        DrumButtonAdapter(
+            clickListener = this
+        )
 
     private var drumCurrentClass: DrumButtonClass = DrumButtonClass.ACOUSTIC
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         drumViewModel = ViewModelProvider(this)[DrumViewModel::class.java]
-        drumViewModel.drumSoundPool = DrumSound(requireContext())
+        drumViewModel.drumSoundPool =
+            DrumSound(requireContext())
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

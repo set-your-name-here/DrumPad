@@ -1,11 +1,11 @@
-package com.rubygrapecore.drumpad.domain
+package self.blackvoidwalker.drumpad.domain
 
 import android.content.Context
 import android.media.AudioAttributes
 import android.media.AudioManager
 import android.media.SoundPool
 import android.util.SparseArray
-import com.rubygrapecore.drumpad.entities.DrumButton
+import self.blackvoidwalker.drumpad.entities.DrumButton
 
 class DrumSound(private var context: Context) {
 
@@ -55,7 +55,9 @@ class DrumSound(private var context: Context) {
         soundPoolMap.clear()
         soundPool?.let { pool ->
             drumButtons.forEach { button ->
-                val poolId = pool.load(context, button.res, SOUND_POOL_PRIORITY)
+                val poolId = pool.load(context, button.res,
+                    SOUND_POOL_PRIORITY
+                )
                 soundPoolMap.put(button.id, poolId)
             }
         }

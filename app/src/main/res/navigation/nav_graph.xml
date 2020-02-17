@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.rubygrapecore.drumpad.presentation.fragments.SplashFragment">
+        android:name="self.blackvoidwalker.drumpad.presentation.fragments.SplashFragment">
         <action
             android:id="@+id/action_splashFragment_to_drumFragment"
             app:destination="@id/drumFragment"
@@ -17,5 +17,5 @@
     </fragment>
     <fragment
         android:id="@+id/drumFragment"
-        android:name="com.rubygrapecore.drumpad.presentation.fragments.DrumFragment" />
+        android:name="self.blackvoidwalker.drumpad.presentation.fragments.DrumFragment" />
 </navigation>

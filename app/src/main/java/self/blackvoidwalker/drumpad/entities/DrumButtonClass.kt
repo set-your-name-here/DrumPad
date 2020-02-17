@@ -1,4 +1,4 @@
-package com.rubygrapecore.drumpad.entities
+package self.blackvoidwalker.drumpad.entities
 
 enum class DrumButtonClass{
     ACOUSTIC, ELECTRONIC, SOUNDSCAPE
